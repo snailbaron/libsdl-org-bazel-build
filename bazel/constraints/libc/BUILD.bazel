@@ -1,0 +1,9 @@
+constraint_value(
+    name = "glibc",
+    constraint_setting = "//bazel/platforms:libc",
+)
+
+constraint_value(
+    name = "not_glibc",
+    constraint_setting = "//bazel/platforms:libc",
+)

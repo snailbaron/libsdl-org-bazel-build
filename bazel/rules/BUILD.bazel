@@ -1,0 +1,24 @@
+load("@rules_shell//shell:sh_binary.bzl", "sh_binary")
+load(":compiler_check.bzl", "check_c_source_compiles")
+
+sh_binary(
+    name = "check_source_compiles",
+    srcs = ["check_source_compiles.sh"],
+)
+
+check_c_source_compiles(
+    name = "have_gcc_atomics",
+    source = """\
+int main(int argc, char **argv) {
+int a;
+void *x, *y, *z;
+__sync_lock_test_and_set(&a, 4);
+__sync_lock_test_and_set(&x, y);
+__sync_fetch_and_add(&a, 1);
+__sync_bool_compare_and_swap(&a, 5, 10);
+__sync_bool_compare_and_swap(&x, y, z);
+return 0; }
+    """,
+)
+
+

@@ -1,0 +1,19 @@
+load("@module_info//:module_info.bzl", "module_info")
+load("@rules_cc//cc:defs.bzl", "cc_library")
+
+sdl_so_version_major = "0"
+
+sdl_so_version_minor = module_info.version.split(".")[1]
+
+sdl_so_version_patch = module_info.version.split(".")[2]
+
+sdl_so_version = "{}.{}.{}".format(
+    sdl_so_version_major,
+    sdl_so_version_minor,
+    sdl_so_version_patch,
+)
+
+cc_library(
+    name = "sdl3",
+    srcs = glob(["include/SDL3/*.h"]),
+)

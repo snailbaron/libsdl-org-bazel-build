@@ -1,0 +1,16 @@
+module(
+    name = "sdl3",
+    version = "3.2.12",
+)
+
+bazel_dep(name = "platforms", version = "0.0.11")
+bazel_dep(name = "rules_cc", version = "0.1.1")
+bazel_dep(name = "rules_pkg", version = "1.1.0")
+bazel_dep(name = "rules_shell", version = "0.5.0")
+
+module_info = use_extension("//bazel/extensions:module_info.bzl", "module_info")
+use_repo(module_info, "module_info")
+
+#register_toolchains(
+#    "//bazel/toolchains:cc_toolchain_for_clang",
+#)

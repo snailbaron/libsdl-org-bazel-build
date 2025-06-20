@@ -1,0 +1,9 @@
+platform(name = "vita")
+
+platform(name = "psp")
+
+platform(name = "ps2")
+
+platform(name = "n3ds")
+
+platform(name = "riscos")

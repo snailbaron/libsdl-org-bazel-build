@@ -1,0 +1,19 @@
+constraint_value(
+    name = "clang",
+    constraint_setting = "//bazel/constraints:compiler",
+)
+
+constraint_value(
+    name = "gcc",
+    constraint_setting = "//bazel/constraints:compiler",
+)
+
+constraint_value(
+    name = "intelcc",
+    constraint_setting = "//bazel/constraints:compiler",
+)
+
+constraint_value(
+    name = "qcc",
+    constraint_setting = "//bazel/constraints:compiler",
+)
